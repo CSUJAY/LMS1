@@ -1,0 +1,161 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light gray background */
+}
+
+/* Header Styles */
+header {
+    background-color: #333; /* Dark background for the header */
+    color: #fff; /* White text */
+    padding: 1rem 2rem; /* Padding for header */
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Align items vertically */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.8em; /* Larger logo text */
+}
+
+nav a {
+    color: #fff; /* White text for navigation */
+    text-decoration: none; /* No underline */
+    margin: 0 15px; /* Margin for spacing */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+nav a:hover {
+    color: #f4f4f4; /* Light hover effect */
+}
+
+/* Auth Button Styles */
+.auth-buttons a {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding for buttons */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    margin-left: 10px; /* Space between buttons */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.auth-buttons a:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Course Image Styles */
+.course-image img {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 20px; /* Margin above image */
+}
+
+/* Course Info Styles */
+.course-info {
+    max-width: 800px; /* Maximum width for course info */
+    margin: 20px auto; /* Center alignment */
+    padding: 20px; /* Padding inside course info */
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Course Info Header Styles */
+.course-info h2 {
+    margin: 0; /* Remove default margin */
+    color: #333; /* Dark color for headings */
+}
+
+.course-info .course-instructor {
+    font-weight: bold; /* Bold text for instructor */
+    color: #666; /* Gray color for instructor name */
+}
+
+.course-description {
+    margin: 15px 0; /* Margin above and below */
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+/* List Styles */
+.course-points,
+.learning-outcomes,
+.course-modules {
+    margin: 10px 0; /* Margin above and below lists */
+    padding-left: 20px; /* Indent lists */
+    list-style-type: disc; /* Bullet points */
+}
+
+.course-points li,
+.learning-outcomes li,
+.course-modules li {
+    margin-bottom: 5px; /* Margin below list items */
+    position: relative; /* Positioning for bullets */
+}
+
+.course-points li::before,
+.learning-outcomes li::before,
+.course-modules li::before {
+    content: "✔"; /* Custom bullet points */
+    color: #4CAF50; /* Green bullet points */
+    position: absolute; /* Absolute positioning */
+    left: -20px; /* Positioning left */
+}
+
+/* Enroll Button Styles */
+.enroll-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding for button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.enroll-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Start Button Container Styles */
+.start-button-container {
+    text-align: center; /* Center the button */
+    margin: 20px 0; /* Margin above and below */
+}
+
+/* Start Now Button Styles */
+.start-now-button {
+    display: inline-block; /* Inline block for button */
+    padding: 10px 20px; /* Padding for button */
+    font-size: 18px; /* Font size */
+    color: white; /* White text */
+    background-color: #28a745; /* Green background */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.start-now-button:hover {
+    background-color: #218838; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center; /* Centered text */
+    padding: 20px; /* Padding for footer */
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    position: relative; /* Relative positioning */
+    bottom: 0; /* Positioning at bottom */
+    width: 100%; /* Full width */
+}

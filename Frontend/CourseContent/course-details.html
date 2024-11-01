@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+    <link rel="stylesheet" href="course-details.css">
+    <style>
+        /* Chatbot button styling */
+        .chatbot-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000; /* Ensure the button is above other elements */
+        }
+
+        /* Chatbot window styling */
+        .chatbot-window {
+            display: none; /* Initially hidden */
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .chatbot-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .chatbot-messages {
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .chatbot-input button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>TechStream</h1>
+        </div>
+        <nav>
+            <a href="../Home/Home.html">Home</a>
+            <a href="../Courses/course.html">Courses</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="../Login/login.html">Login</a>
+            <a href="../Signin/signup.html">Sign Up</a>
+        </div>
+    </header>
+
+    <div class="course-info">
+        <h2>Course Title: Introduction to Ethical Hacking</h2>
+        <p class="course-instructor">Instructor: Jane Smith</p>
+        <p class="course-description">
+            This course is designed for beginners who are interested in the field of cybersecurity and ethical hacking.
+            You'll learn the essentials of ethical hacking, including vulnerability assessment, network security, penetration testing,
+            and more. Key areas covered in this course include:
+        </p>
+        <ul class="course-points">
+            <li>Understanding cybersecurity fundamentals and ethical hacking principles.</li>
+            <li>Identifying different types of cyber threats and vulnerabilities.</li>
+            <li>Setting up a secure virtual environment for penetration testing.</li>
+            <li>Learning the basics of network protocols and security models.</li>
+            <li>Conducting reconnaissance and scanning for open ports and services.</li>
+            <li>Using tools for vulnerability assessment and exploit research.</li>
+            <li>Applying ethical hacking techniques to web and network security.</li>
+            <li>Understanding the legal and ethical responsibilities of a cybersecurity professional.</li>
+            <li>Project: Perform a vulnerability assessment and create a detailed report.</li>
+        </ul>
+
+        <h3>Learning Outcomes:</h3>
+        <p>By the end of this course, you will be able to:</p>
+        <ul class="learning-outcomes">
+            <li>Analyze potential security risks and vulnerabilities in systems and networks.</li>
+            <li>Understand and use common tools in ethical hacking, such as Nmap, Wireshark, and Metasploit.</li>
+            <li>Perform a basic vulnerability assessment and identify weaknesses in security configurations.</li>
+            <li>Practice responsible and legal hacking within an ethical framework.</li>
+        </ul>
+
+        <h3>Prerequisites:</h3>
+        <p>Basic understanding of computer systems and networks is recommended. No prior hacking experience is necessary.</p>
+
+        <h3>Course Modules:</h3>
+        <ol class="course-modules">
+            <li>Introduction to Ethical Hacking and Cybersecurity</li>
+            <li>Setting Up a Safe Hacking Environment</li>
+            <li>Understanding Network Basics and Security Protocols</li>
+            <li>Reconnaissance and Footprinting</li>
+            <li>Scanning Networks and Vulnerability Assessment</li>
+            <li>Exploitation Techniques and Tools</li>
+            <li>Web Application Security</li>
+            <li>Final Project and Report Preparation</li>
+        </ol>
+    </div>
+
+    <div class="start-button-container">
+        <!-- Updated the onclick to navigate to course-details.html -->
+        <a href="../Course-Details/course-details.html" class="start-now-button">Start Now</a>
+    </div>
+
+    <!-- Chatbot button and window -->
+    <button class="chatbot-button" onclick="toggleChatbot()">💬</button>
+
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">Chat with us</div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Toggle chatbot window visibility
+        function toggleChatbot() {
+            const chatbotWindow = document.getElementById("chatbotWindow");
+            chatbotWindow.style.display = chatbotWindow.style.display === "none" ? "block" : "none";
+        }
+
+        // Handle sending a message
+        function sendMessage() {
+            const input = document.getElementById("chatbotInput");
+            const messageText = input.value.trim();
+
+            if (messageText) {
+                const messageContainer = document.getElementById("chatbotMessages");
+
+                // Display user message
+                const userMessage = document.createElement("div");
+                userMessage.textContent = messageText;
+                userMessage.style.color = "blue";
+                userMessage.style.textAlign = "right";
+                userMessage.style.margin = "5px 0";
+                messageContainer.appendChild(userMessage);
+
+                // Scroll to the bottom of the chat
+                messageContainer.scrollTop = messageContainer.scrollHeight;
+
+                // Clear input
+                input.value = "";
+
+                // Display bot response after a delay
+                setTimeout(() => {
+                    const botMessage = document.createElement("div");
+                    botMessage.textContent = "Thank you for reaching out! How can we assist you?";
+                    botMessage.style.color = "black";
+                    botMessage.style.margin = "5px 0";
+                    messageContainer.appendChild(botMessage);
+
+                    // Scroll to the bottom of the chat
+                    messageContainer.scrollTop = messageContainer.scrollHeight;
+                }, 500);
+            }
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 TechStream. All rights reserved.</p>
+    </footer>
+</body>
+</html>

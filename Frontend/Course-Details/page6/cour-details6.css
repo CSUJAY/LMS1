@@ -1,0 +1,129 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: #007BFF;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background: #0056b3;
+    color: white;
+    padding: 15px;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    overflow: auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Styles */
+main {
+    margin-left: 270px; /* Adjust according to sidebar width */
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Video Container Styles */
+.video-container {
+    margin: 10px 0;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 315px; /* Adjust height as needed */
+    border: none;
+}
+
+/* Quiz Form Styles */
+#quizForm {
+    background: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#quizForm ol {
+    margin-left: 20px;
+}
+
+#quizForm button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#quizForm button:hover {
+    background-color: #0056b3;
+}
+
+/* Next Button Styles */
+.next-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.next-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.next-button:hover {
+    background-color: #218838;
+}
+
+/* Footer Styles */
+.page-footer {
+    background: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

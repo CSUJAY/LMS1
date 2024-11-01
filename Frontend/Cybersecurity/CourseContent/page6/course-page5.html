@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Response and Recovery</title>
+    <link rel="stylesheet" href="../page6/course-page5.css"> <!-- Update path as necessary -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .badge {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .points {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .progress {
+            background-color: #f3f3f3;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .progress-bar {
+            background-color: #4CAF50;
+            height: 20px;
+            width: 0%;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Incident Response and Recovery</h1>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#incident-overview">Incident Overview</a></li>
+            <li><a href="#response-process">Response Process</a></li>
+            <li><a href="#recovery-strategies">Recovery Strategies</a></li>
+            <li><a href="#post-incident">Post-Incident Actions</a></li>
+            <li><a href="#video-modules">Video Modules</a></li>
+            <li><a href="#interactive-quiz">Quiz</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Gamification Elements -->
+        <div class="points">Points Earned: <span id="points">0</span></div>
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div id="badges"></div>
+
+        <!-- Course Sections -->
+        <section id="incident-overview">
+            <h2>Incident Overview</h2>
+            <p>This section introduces the basics of incidents, including types and causes, and the importance of quick response to mitigate damage.</p>
+            <button onclick="completeSection()">Complete Section</button>
+        </section>
+
+        <section id="response-process">
+            <h2>Incident Response Process</h2>
+            <p>Effective incident response involves detection, containment, and analysis of the threat to minimize damage and restore operations.</p>
+            <button onclick="completeSection()">Complete Section</button>
+        </section>
+
+        <section id="recovery-strategies">
+            <h2>Recovery Strategies</h2>
+            <p>Recovery strategies include restoring data from backups, repairing affected systems, and re-securing the network after an incident.</p>
+            <button onclick="completeSection()">Complete Section</button>
+        </section>
+
+        <section id="post-incident">
+            <h2>Post-Incident Actions</h2>
+            <p>Post-incident actions, such as documentation, reporting, and review, help improve future responses and reduce the likelihood of recurrence.</p>
+            <button onclick="completeSection()">Complete Section</button>
+        </section>
+
+        <!-- Video Modules Section -->
+        <section id="video-modules">
+            <h2>Video Modules</h2>
+            <div class="video-module">
+                <h3>Understanding Incidents and Response</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/fU_w8Ou9RVg" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-module">
+                <h3>Incident Recovery Techniques</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/bjio4uvcmGI" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="interactive-quiz">
+            <h2>Interactive Quiz</h2>
+            <p>Test your knowledge with this quiz:</p>
+            <form id="quizForm">
+                <ol>
+                    <li>
+                        <p>What is the first step in incident response?</p>
+                        <input type="radio" name="q1" value="a"> Detection<br>
+                        <input type="radio" name="q1" value="b"> Recovery<br>
+                        <input type="radio" name="q1" value="c"> Analysis<br>
+                        <input type="radio" name="q1" value="d"> None of the above
+                    </li>
+                    <li>
+                        <p>What should be done post-incident?</p>
+                        <input type="radio" name="q2" value="a"> Close the incident<br>
+                        <input type="radio" name="q2" value="b"> Report and document<br>
+                        <input type="radio" name="q2" value="c"> Restart systems<br>
+                        <input type="radio" name="q2" value="d"> None of the above
+                    </li>
+                </ol>
+                <button type="submit" onclick="submitQuiz(event)">Submit</button>
+            </form>
+        </section>
+
+        <!-- Navigation Button -->
+        <section class="next-button-container">
+            <a href="../page7/course-page6.html" class="next-button">Next</a> <!-- Update path as necessary -->
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2024 Ethical Hacking Course</p>
+    </footer>
+
+    <script>
+        let totalPoints = 0;
+        let completedSections = 0;
+        const totalSections = 4;
+
+        function completeSection() {
+            totalPoints += 10; // Points for completing a section
+            completedSections++;
+            document.getElementById('points').innerText = totalPoints;
+            updateProgress();
+            checkForBadges();
+        }
+
+        function updateProgress() {
+            const progressBar = document.getElementById('progressBar');
+            const progress = (completedSections / totalSections) * 100;
+            progressBar.style.width = progress + '%';
+        }
+
+        function checkForBadges() {
+            const badgesContainer = document.getElementById('badges');
+            if (completedSections === totalSections) {
+                const badge = document.createElement('div');
+                badge.className = 'badge';
+                badge.innerText = 'Master of Incident Response!';
+                badgesContainer.appendChild(badge);
+            }
+        }
+
+        function submitQuiz(event) {
+            event.preventDefault();
+            const q1Answer = document.querySelector('input[name="q1"]:checked');
+            const q2Answer = document.querySelector('input[name="q2"]:checked');
+            if (q1Answer && q1Answer.value === 'a') {
+                totalPoints += 5; // Points for correct answer
+            }
+            if (q2Answer && q2Answer.value === 'b') {
+                totalPoints += 5; // Points for correct answer
+            }
+            document.getElementById('points').innerText = totalPoints;
+            alert('Quiz submitted! Points earned: ' + totalPoints);
+        }
+    </script>
+</body>
+</html>

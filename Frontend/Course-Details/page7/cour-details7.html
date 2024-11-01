@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application Security</title>
+    <link rel="stylesheet" href="../page7/cour-details7.css">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+        header, footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: #fff;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 200px;
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+        }
+        .sidebar ul {
+            list-style-type: none;
+        }
+        .sidebar a {
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        main {
+            margin-left: 220px;
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 2rem;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .video-container {
+            margin: 1rem 0;
+            max-width: 100%;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 5px;
+        }
+        .progress-tracker {
+            margin-top: 1rem;
+        }
+        .badges img {
+            width: 40px;
+            margin-right: 10px;
+        }
+        .next-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .next-button:hover {
+            background-color: #45a049;
+        }
+        .page-footer {
+            margin-top: auto;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Web Application Security</h1>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#setup-overview">Course Overview</a></li>
+            <li><a href="#learning-objectives">Learning Objectives</a></li>
+            <li><a href="#course-modules">Course Modules</a></li>
+            <li><a href="#supplementary-guide">Supplementary Guide</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#glossary">Glossary</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="setup-overview">
+            <h2>Overview of Web Application Security</h2>
+            <p>Web application security refers to the measures taken to protect web applications from cyber threats. This section covers the fundamental concepts and best practices for securing web applications.</p>
+        </section>
+
+        <section id="importance">
+            <h2>Importance of Web Application Security</h2>
+            <p>With the increasing number of web applications, security is paramount to protect sensitive data and maintain user trust. A single vulnerability can lead to data breaches and loss of reputation.</p>
+        </section>
+
+        <section id="common-threats">
+            <h2>Common Threats to Web Applications</h2>
+            <ul>
+                <li><strong>Cross-Site Scripting (XSS):</strong> Allows attackers to inject malicious scripts into web pages viewed by users.</li>
+                <li><strong>SQL Injection:</strong> Enables attackers to execute arbitrary SQL code on the database, leading to data theft or manipulation.</li>
+                <li><strong>Cross-Site Request Forgery (CSRF):</strong> Tricks users into executing unwanted actions on a different website where they are authenticated.</li>
+                <li><strong>Denial of Service (DoS):</strong> Attacks aimed at overwhelming a service, making it unavailable to users.</li>
+            </ul>
+        </section>
+
+        <section id="best-practices">
+            <h2>Best Practices for Securing Web Applications</h2>
+            <p>Implementing security measures such as input validation, output encoding, authentication, and session management is crucial for protecting web applications.</p>
+        </section>
+
+        <section id="web-dev-security">
+            <h2>Web Development Security</h2>
+            <p>This module focuses on essential security measures in web development, covering topics like secure coding practices, handling user inputs, and preventing data breaches.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/4YOpILi9Oxs" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/cbmBDiR6WaY" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="gamification">
+            <h2>Gamification</h2>
+            <p>Earn badges and track your progress as you move through the course!</p>
+            <div class="progress-tracker">
+                <p>Course Progress: <progress value="50" max="100"></progress></p>
+                <ul class="badges">
+                    <li><img src="badge1.png" alt="Completion Badge"> Completion Badge</li>
+                    <li><img src="badge2.png" alt="Security Pro Badge"> Security Pro Badge</li>
+                    <li><img src="badge3.png" alt="Coding Master Badge"> Coding Master Badge</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="interactive-quiz">
+            <h2>Interactive Quiz</h2>
+            <p>Test your knowledge on web application security:</p>
+            <form id="quizForm">
+                <ol>
+                    <li>
+                        <p>What is the purpose of input validation?</p>
+                        <label><input type="radio" name="q1" value="b"> To prevent attacks</label>
+                    </li>
+                    <li>
+                        <p>Which attack involves injecting malicious SQL statements?</p>
+                        <label><input type="radio" name="q2" value="b"> SQL Injection</label>
+                    </li>
+                    <li>
+                        <p>What is a common defense against XSS attacks?</p>
+                        <label><input type="radio" name="q3" value="c"> Output encoding</label>
+                    </li>
+                </ol>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="resources">
+            <h2>Additional Resources</h2>
+            <ul>
+                <li><a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP Top Ten</a></li>
+            </ul>
+        </section>
+
+        <section class="next-button-container">
+            <a href="../page8/cour-details8.html" class="next-button">Next</a>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2024 Ethical Hacking Course</p>
+    </footer>
+</body>
+</html>

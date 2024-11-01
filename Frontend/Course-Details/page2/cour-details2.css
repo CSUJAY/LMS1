@@ -1,0 +1,344 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: linear-gradient(135deg, #9d50bb, #6e48aa);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Container for sidebar and main content */
+.content-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 240px;
+    background: linear-gradient(135deg, #1d1f27, #3c3f4e);
+    color: #fff;
+    padding-top: 20px;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    transition: width 0.3s;
+}
+
+.sidebar:hover {
+    width: 260px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #ffffffc2;
+    text-decoration: none;
+    padding: 12px 15px;
+    display: block;
+    font-size: 1.05em;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a:focus {
+    background: #575a66;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.sidebar ul li.active a {
+    background-color: #4c4f5d;
+    color: #fff;
+}
+
+/* Main content layout */
+main {
+    margin-left: 260px;
+    padding: 30px;
+    max-width: 900px;
+    flex: 1;
+}
+
+/* Header Styling */
+.page-header h1 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1.2em;
+    color: #e0e0e0;
+}
+
+/* Section Styles */
+section {
+    margin-top: 20px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background 0.3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    background-color: #f0f0f0;
+}
+
+/* Video Styling */
+/* Updated Video Styling */
+/* Updated Video Styling */
+video {
+    width: 100%;
+    max-width: 1000px; /* Increased max-width for a larger appearance */
+    height: auto;
+    padding: 10px; /* Added padding for spacing around the video */
+    border-radius: 10px; /* Slightly larger border-radius for smoother edges */
+    margin-top: 20px; /* Increased margin for better spacing from other elements */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for more depth */
+}
+
+
+/* Quiz Container Styling */
+.quiz {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.quiz:hover {
+    transform: scale(1.02);
+}
+
+/* Question Label Styling */
+.quiz label {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #343a40;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.quiz label:hover {
+    color: #007bff;
+}
+
+/* Custom Select Styling */
+.quiz select {
+    padding: 12px;
+    margin-top: 10px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #ffffff;
+    color: #333;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.quiz select:hover,
+.quiz select:focus {
+    border-color: #0056b3;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.4);
+    outline: none;
+}
+
+/* Custom Radio Button Styling */
+.quiz input[type="radio"] {
+    display: none;
+}
+
+.quiz label.radio-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: #e9ecef;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.quiz input[type="radio"]:checked + label.radio-label {
+    background: #007bff;
+    color: #ffffff;
+}
+
+.quiz input[type="radio"]:hover + label.radio-label {
+    background: #b3d7ff;
+}
+
+/* Submit Button Styling */
+.quiz button {
+    padding: 12px 20px;
+    margin-top: 20px;
+    background-color: #28a745;
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quiz button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Result Display Styling */
+.quiz #quizResult {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #343a40;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    border-left: 5px solid #28a745;
+    animation: fadeInResult 0.4s ease-out;
+}
+
+@keyframes fadeInResult {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+.page-footer {
+    text-align: center;
+    padding: 12px 0;
+    background-color: #282c34;
+    color: #fff;
+    font-size: 0.9em;
+    margin-top: 20px;
+    border-top: 2px solid #ccc;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+section, .page-header, .page-footer {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px;
+        transition: none; /* Disable hover effect on mobile */
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px; /* Reduced padding for smaller screens */
+    }
+
+    .quiz select, .quiz button {
+        width: 100%;
+        padding: 10px; /* Consistent padding */
+    }
+}
+
+/* Next Button Styles */
+.next-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.next-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.next-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Additional Enhancements */
+.next-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+
+
+        /* Styling for gamification elements */
+        #progress-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+        #progress-bar {
+            width: 0;
+            height: 20px;
+            background-color: #4caf50;
+            text-align: center;
+            color: white;
+            transition: width 0.5s;
+        }
+        .achievement {
+            text-align: center;
+            color: #555;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .unlocked {
+            color: gold;
+        }
+    

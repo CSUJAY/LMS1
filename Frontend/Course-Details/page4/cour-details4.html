@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconnaissance and Footprinting</title>
+    <link rel="stylesheet" href="../page4/cour-details4.css">
+</head>
+<body>
+    <header>
+        <h1>Reconnaissance and Footprinting</h1>
+        <!-- Gamification Score and Badge Display -->
+        <div class="gamification">
+            <p>Points: <span id="points">0</span></p>
+            <p>Badges Earned: <span id="badges">None</span></p>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#overview" onclick="updateProgress(10)">Course Overview</a></li>
+            <li><a href="#learning-objectives" onclick="updateProgress(10)">Learning Objectives</a></li>
+            <li><a href="#types-of-reconnaissance" onclick="updateProgress(10)">Types of Reconnaissance</a></li>
+            <li><a href="#footprinting-techniques" onclick="updateProgress(10)">Footprinting Techniques</a></li>
+            <li><a href="#tools-for-reconnaissance" onclick="updateProgress(10)">Tools for Reconnaissance</a></li>
+            <li><a href="#video-tutorials" onclick="updateProgress(20)">Video Tutorials</a></li>
+            <li><a href="#quiz" onclick="updateProgress(30)">Quiz</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Course Sections -->
+        <section id="overview">
+            <h2>Overview of Reconnaissance and Footprinting</h2>
+            <p>This module introduces the initial phases of ethical hacking: reconnaissance and footprinting. These are essential steps where information about a target is gathered without directly engaging with the system.</p>
+        </section>
+
+        <section id="learning-objectives">
+            <h2>Learning Objectives</h2>
+            <ul>
+                <li>Understand the importance of reconnaissance in ethical hacking.</li>
+                <li>Learn the different types of reconnaissance.</li>
+                <li>Explore footprinting techniques and tools used to gather information.</li>
+            </ul>
+        </section>
+
+        <section id="types-of-reconnaissance">
+            <h2>Types of Reconnaissance</h2>
+            <p>Reconnaissance can be categorized into two main types:</p>
+            <ul>
+                <li><strong>Passive Reconnaissance:</strong> Gathering information without direct interaction with the target. This might involve using public sources, like search engines and social media.</li>
+                <li><strong>Active Reconnaissance:</strong> Involves direct interaction with the target to gather information. This might include using scanning tools to check for open ports or services.</li>
+            </ul>
+        </section>
+
+        <section id="footprinting-techniques">
+            <h2>Footprinting Techniques</h2>
+            <p>Footprinting techniques are used to gather information such as domain names, IP addresses, and other network details. Common methods include:</p>
+            <ul>
+                <li><strong>WHOIS Lookups:</strong> To obtain registration details about domain names.</li>
+                <li><strong>DNS Enumeration:</strong> Gathering information about the target's domain and subdomains.</li>
+                <li><strong>Social Engineering:</strong> Using psychological manipulation to obtain sensitive information.</li>
+                <li><strong>Search Engines:</strong> Leveraging search engines to gather public information about the target.</li>
+            </ul>
+        </section>
+
+        <section id="tools-for-reconnaissance">
+            <h2>Popular Tools for Reconnaissance and Footprinting</h2>
+            <ul>
+                <li><strong>Maltego:</strong> A tool for data mining and gathering information about individuals, companies, or networks.</li>
+                <li><strong>Shodan:</strong> A search engine for Internet-connected devices that helps find specific IPs, open ports, and exposed services.</li>
+                <li><strong>Google Dorks:</strong> A search technique to use Google to reveal specific types of information.</li>
+                <li><strong>Nslookup:</strong> A command-line tool for querying DNS to obtain domain and IP address information.</li>
+            </ul>
+        </section>
+
+        <!-- Video Tutorials Section -->
+        <section id="video-tutorials">
+            <h2>Video Tutorials</h2>
+            <p>Watch these tutorials to learn more about reconnaissance and footprinting techniques:</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/FzZ5ykie3yY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/RYn9SdDKVkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz">
+            <h2>Quiz on Reconnaissance and Footprinting</h2>
+            <form id="quizForm" onsubmit="submitQuiz(event)">
+                <ol>
+                    <li>
+                        <p>What is passive reconnaissance?</p>
+                        <input type="radio" name="q1" value="correct"> Gathering information without interacting with the target<br>
+                        <input type="radio" name="q1" value="incorrect"> Directly interacting with the target<br>
+                    </li>
+                    <li>
+                        <p>Which tool is commonly used for DNS enumeration?</p>
+                        <input type="radio" name="q2" value="correct"> Nslookup<br>
+                        <input type="radio" name="q2" value="incorrect"> Burp Suite<br>
+                    </li>
+                    <li>
+                        <p>What type of reconnaissance does Google Dorks facilitate?</p>
+                        <input type="radio" name="q3" value="correct"> Passive<br>
+                        <input type="radio" name="q3" value="incorrect"> Active<br>
+                    </li>
+                </ol>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Navigation Button -->
+        <section class="next-button-container">
+            <a href="../page5/cour-details5.html" class="next-button">Next</a>
+        </section>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar-container">
+            <p>Course Progress</p>
+            <div class="progress-bar" id="progressBar">
+                <div class="progress" id="progress" style="width: 0%;"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2024 Ethical Hacking Course</p>
+    </footer>
+
+    <!-- JavaScript for Gamification -->
+    <script>
+        let points = 0;
+        let badges = [];
+        const progressBar = document.getElementById("progress");
+
+        function updateProgress(value) {
+            points += value;
+            document.getElementById("points").innerText = points;
+            updateBadges();
+            updateProgressBar();
+        }
+
+        function updateBadges() {
+            if (points >= 50 && !badges.includes("Explorer")) {
+                badges.push("Explorer");
+            }
+            if (points >= 100 && !badges.includes("Pro Hacker")) {
+                badges.push("Pro Hacker");
+            }
+            document.getElementById("badges").innerText = badges.join(", ");
+        }
+
+        function updateProgressBar() {
+            progressBar.style.width = points + "%";
+        }
+
+        function submitQuiz(event) {
+            event.preventDefault();
+            const answers = document.querySelectorAll('input[type="radio"]:checked');
+            answers.forEach(answer => {
+                if (answer.value === "correct") updateProgress(10);
+            });
+            alert("Quiz submitted! Points updated.");
+        }
+    </script>
+</body>
+</html>

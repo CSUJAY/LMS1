@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Sessions - Teacher Panel</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-semibold">TeachPanel</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Dashboard</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Courses</a>
+                    <a href="#" class="text-blue-600">Live Sessions</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto py-6 px-4">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold">Live Session Management</h1>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                Schedule New Session
+            </button>
+        </div>
+
+        <!-- Active Session -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold text-green-600">Active Session</h2>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">Live Now</span>
+            </div>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-medium">Web Development - HTML Basics</h3>
+                        <p class="text-sm text-gray-600">Started at 10:00 AM • 24 participants</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">End Session</button>
+                        <button class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700">Share Screen</button>
+                        <button class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700">Record</button>
+                    </div>
+                </div>
+                
+                <!-- Participant Controls -->
+                <div class="border rounded-lg p-4">
+                    <h4 class="font-medium mb-2">Participants</h4>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span>John Doe</span>
+                            <div class="flex space-x-2">
+                                <button class="text-blue-600">Mute</button>
+                                <button class="text-blue-600">Remove</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Jane Smith</span>
+                            <div class="flex space-x-2">
+                                <button class="text-blue-600">Mute</button>
+                                <button class="text-blue-600">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Sessions -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-lg font-semibold mb-4">Upcoming Sessions</h2>
+            <div class="space-y-4">
+                <div class="border rounded-lg p-4">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="font-medium">JavaScript Functions Workshop</h3>
+                            <p class="text-sm text-gray-600">Tomorrow, 2:00 PM • 18 registered</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Start</button>
+                            <button class="text-blue-600">Edit</button>
+                            <button class="text-red-600">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

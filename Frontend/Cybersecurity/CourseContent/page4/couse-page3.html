@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Security Fundamentals</title>
+    <link rel="stylesheet" href="../page4/couse-page3.css"> <!-- Update path as necessary -->
+    <style>
+        .progress-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress {
+            height: 20px;
+            width: 0;
+            background-color: #4caf50;
+            transition: width 0.5s;
+        }
+        .achievement {
+            display: none;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #e0f7fa;
+            border: 1px solid #4caf50;
+        }
+        .quiz-result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Network Security Fundamentals</h1>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#network-security-overview">Network Security Overview</a></li>
+            <li><a href="#types-of-attacks">Types of Network Attacks</a></li>
+            <li><a href="#security-protocols">Security Protocols</a></li>
+            <li><a href="#firewalls-and-vpn">Firewalls and VPNs</a></li>
+            <li><a href="#best-practices">Best Practices for Network Security</a></li>
+            <li><a href="#video-modules">Video Modules</a></li>
+            <li><a href="#interactive-quiz">Quiz</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Course Sections -->
+        <section id="network-security-overview">
+            <h2>Overview of Network Security</h2>
+            <p>This section will cover the importance of securing networks to protect data and resources from unauthorized access and threats.</p>
+        </section>
+
+        <section id="types-of-attacks">
+            <h2>Types of Network Attacks</h2>
+            <ul>
+                <li><strong>Man-in-the-Middle (MitM) Attacks:</strong> An attacker intercepts communication between two parties.</li>
+                <li><strong>DDoS Attacks:</strong> Overloading a network to disrupt services.</li>
+                <li><strong>Packet Sniffing:</strong> Capturing data packets traveling over a network.</li>
+            </ul>
+        </section>
+
+        <section id="security-protocols">
+            <h2>Security Protocols</h2>
+            <p>Security protocols, such as SSL/TLS and IPsec, ensure secure communication over networks by encrypting data.</p>
+        </section>
+
+        <section id="firewalls-and-vpn">
+            <h2>Firewalls and VPNs</h2>
+            <p>Firewalls protect networks by controlling incoming and outgoing traffic, while VPNs provide secure remote access to networks.</p>
+        </section>
+
+        <section id="best-practices">
+            <h2>Best Practices for Network Security</h2>
+            <p>Implementing strong passwords, regular updates, and employee training can significantly enhance network security.</p>
+        </section>
+
+        <!-- Video Modules Section -->
+        <section id="video-modules">
+            <h2>Video Modules</h2>
+            <div class="video-module">
+                <h3>Introduction to Network Security</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/rG02r5y2Fdo" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-module">
+                <h3>Understanding Firewalls and VPNs</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/9GZlVOafYTg" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-module">
+                <h3>Common Network Attacks and Prevention</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/_-DekqEyAV0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Progress Tracker -->
+        <div class="progress-bar">
+            <div class="progress" style="width: 70%;"></div> <!-- Update based on course completion -->
+        </div>
+
+        <!-- Quiz Section -->
+        <section id="interactive-quiz">
+            <h2>Interactive Quiz</h2>
+            <p>Test your knowledge with this quiz:</p>
+            <form id="quizForm" onsubmit="return submitQuiz(event);">
+                <ol>
+                    <li>
+                        <p>What is a DDoS attack?</p>
+                        <input type="radio" name="q1" value="a"> A type of attack that overloads a network.<br>
+                        <input type="radio" name="q1" value="b"> A method of encrypting data.<br>
+                        <input type="radio" name="q1" value="c"> A tool for network management.<br>
+                        <input type="radio" name="q1" value="d"> None of the above.
+                    </li>
+                    <li>
+                        <p>Which of the following is a security protocol?</p>
+                        <input type="radio" name="q2" value="a"> TCP<br>
+                        <input type="radio" name="q2" value="b"> SSL<br>
+                        <input type="radio" name="q2" value="c"> FTP<br>
+                        <input type="radio" name="q2" value="d"> None of the above
+                    </li>
+                </ol>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="quiz-result"></div>
+            <div class="achievement"></div>
+        </section>
+
+        <!-- Navigation Button -->
+        <section class="next-button-container">
+            <a href="../page5/course-page4.html" class="next-button">Next</a> <!-- Update path as necessary -->
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2024 Network Security Fundamentals Course</p>
+    </footer>
+
+    <script>
+        function submitQuiz(event) {
+            event.preventDefault(); // Prevent form submission
+            const quizForm = document.getElementById('quizForm');
+            let score = 0;
+            const totalQuestions = 2; // Update based on the number of questions
+
+            // Check answers
+            if (quizForm.q1.value === 'a') score++;
+            if (quizForm.q2.value === 'b') score++;
+
+            // Display results
+            const resultDiv = document.querySelector('.quiz-result');
+            resultDiv.innerHTML = `Your score: ${score} out of ${totalQuestions}`;
+
+            // Show achievements based on score
+            const achievementDiv = document.querySelector('.achievement');
+            if (score === totalQuestions) {
+                achievementDiv.innerHTML = "Achievement Unlocked: Quiz Master!";
+                achievementDiv.style.display = "block";
+            } else {
+                achievementDiv.innerHTML = "Keep trying to improve your score!";
+                achievementDiv.style.display = "block";
+            }
+
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>

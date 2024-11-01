@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Teacher Panel</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-semibold">TeachPanel</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Dashboard</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Courses</a>
+                    <a href="#" class="text-blue-600">Analytics</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="max-w-7xl mx-auto py-6 px-4">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold">Analytics and Reporting</h1>
+            <div class="flex space-x-2">
+                <select class="border rounded-lg px-4 py-2" id="timeRange">
+                    <option>Last 7 days</option>
+                    <option>Last 30 days</option>
+                    <option>Last 3 months</option>
+                </select>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                    Export Report
+                </button>
+            </div>
+        </div>
+        <!-- Key Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-sm font-medium text-gray-500">Total Students</h3>
+                <p class="text-2xl font-semibold mt-2">156</p>
+                <span class="text-green-600 text-sm">↑ 12% this month</span>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-sm font-medium text-gray-500">Average Completion Rate</h3>
+                <p class="text-2xl font-semibold mt-2">78%</p>
+                <span class="text-green-600 text-sm">↑ 5% this month</span>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-sm font-medium text-gray-500">Active Courses</h3>
+                <p class="text-2xl font-semibold mt-2">4</p>
+                <span class="text-gray-600 text-sm">No change</span>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-sm font-medium text-gray-500">Average Engagement</h3>
+                <p class="text-2xl font-semibold mt-2">85%</p>
+                <span class="text-green-600 text-sm">↑ 3% this month</span>
+            </div>
+        </div>
+        <!-- Charts -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-lg font-semibold mb-4">Student Progress</h2>
+                <canvas id="progressChart" width="400" height="300"></canvas>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-lg font-semibold mb-4">Course Engagement</h2>
+                <canvas id="engagementChart" width="400" height="300"></canvas>
+            </div>
+        </div>
+        <!-- Recent Activity -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-lg font-semibold mb-4">Recent Activity</h2>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between border-b pb-4">
+                    <div>
+                        <p class="font-medium">Course: Introduction to Programming</p>
+                        <p class="text-sm text-gray-500">3 new submissions</p>
+                    </div>
+                    <span class="text-sm text-gray-500">2 hours ago</span>
+                </div>
+                <div class="flex items-center justify-between border-b pb-4">
+                    <div>
+                        <p class="font-medium">Course: Web Development Basics</p>
+                        <p class="text-sm text-gray-500">5 students completed module 3</p>
+                    </div>
+                    <span class="text-sm text-gray-500">5 hours ago</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="font-medium">Course: Data Structures</p>
+                        <p class="text-sm text-gray-500">New discussion thread started</p>
+                    </div>
+                    <span class="text-sm text-gray-500">1 day ago</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Initialize Charts
+        const progressChart = new Chart(document.getElementById('progressChart'), {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Average Progress',
+                    data: [30, 45, 62, 78],
+                    borderColor: 'rgb(59, 130, 246)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+
+        const engagementChart = new Chart(document.getElementById('engagementChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Introduction to Programming', 'Web Development', 'Data Structures', 'Algorithms'],
+                datasets: [{
+                    label: 'Student Engagement (%)',
+                    data: [85, 72, 90, 65],
+                    backgroundColor: 'rgba(59, 130, 246, 0.5)',
+                    borderColor: 'rgb(59, 130, 246)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+
+        // Handle time range changes
+        document.getElementById('timeRange').addEventListener('change', function(e) {
+            // Add functionality to update charts based on selected time range
+            console.log('Time range changed:', e.target.value);
+        });
+    </script>
+</body>
+</html>

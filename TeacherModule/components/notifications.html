@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <section id="notifications" class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Notifications & Announcements</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-lg font-semibold mb-4">Send Announcement</h3>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Recipients</label>
+                        <select class="w-full border rounded-lg px-3 py-2">
+                            <option>All Students</option>
+                            <option>Web Development Class</option>
+                            <option>Python Programming Class</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Message</label>
+                        <textarea class="w-full border rounded-lg px-3 py-2" rows="4"></textarea>
+                    </div>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                        Send Announcement
+                    </button>
+                </form>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-lg font-semibold mb-4">Recent Notifications</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-4 border-b pb-4">
+                        <div class="bg-blue-100 rounded-full p-2">
+                            <i class="fas fa-bell text-blue-500"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">Assignment Due Date Extended</p>
+                            <p class="text-sm text-gray-500">Web Development • 2 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-100 rounded-full p-2">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">New Course Materials Added</p>
+                            <p class="text-sm text-gray-500">Python Programming • 1 day ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

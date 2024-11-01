@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Cybersecurity Principles</title>
+    <link rel="stylesheet" href="../page2/course-page1.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Introduction to Cybersecurity Principles</h1>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#course-overview">Course Overview</a></li>
+            <li><a href="#learning-objectives">Learning Objectives</a></li>
+            <li><a href="#course-modules">Course Modules</a></li>
+            <li><a href="#video-tutorials">Video Tutorials</a></li>
+            <li><a href="#interactive-quiz">Quiz</a></li>
+            <li><a href="#resources">Additional Resources</a></li>
+            <li><a href="#gamification">Gamification</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Course Sections -->
+        <section id="course-overview">
+            <h2>Course Overview</h2>
+            <p>This course introduces key concepts of cybersecurity principles, focusing on security fundamentals and risk management.</p>
+        </section>
+
+        <section id="learning-objectives">
+            <h2>Learning Objectives</h2>
+            <ul>
+                <li>Understand the fundamentals of cybersecurity.</li>
+                <li>Identify common cybersecurity threats and vulnerabilities.</li>
+                <li>Learn about risk management and mitigation strategies.</li>
+                <li>Familiarize with security frameworks and best practices.</li>
+            </ul>
+        </section>
+
+        <section id="course-modules">
+            <h2>Course Modules</h2>
+            <ul>
+                <li>Module 1: Introduction to Cybersecurity</li>
+                <li>Module 2: Threats and Vulnerabilities</li>
+                <li>Module 3: Risk Management</li>
+                <li>Module 4: Security Frameworks</li>
+            </ul>
+        </section>
+
+        <!-- Video Tutorials Section -->
+        <section id="video-tutorials">
+            <h2>Video Tutorials</h2>
+            <p>Watch these tutorials for a better understanding of cybersecurity principles:</p>
+           
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/inWWhr5tnEA" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/IP-E75FGFkU" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="interactive-quiz">
+            <h2>Interactive Quiz</h2>
+            <p>Test your knowledge with this quiz:</p>
+            <form id="quizForm">
+                <ol>
+                    <li>
+                        <p>What is the primary goal of cybersecurity?</p>
+                        <input type="radio" name="q1" value="a"> Protect information<br>
+                        <input type="radio" name="q1" value="b"> Develop software<br>
+                        <input type="radio" name="q1" value="c"> Create networks<br>
+                        <input type="radio" name="q1" value="d"> Sell products
+                    </li>
+                    <li>
+                        <p>Which of the following is a common cybersecurity threat?</p>
+                        <input type="radio" name="q2" value="a"> Phishing<br>
+                        <input type="radio" name="q2" value="b"> Coding<br>
+                        <input type="radio" name="q2" value="c"> Project Management<br>
+                        <input type="radio" name="q2" value="d"> Data Backup
+                    </li>
+                    <li>
+                        <p>What does risk management involve?</p>
+                        <input type="radio" name="q3" value="a"> Assessing and mitigating risks<br>
+                        <input type="radio" name="q3" value="b"> Only identifying risks<br>
+                        <input type="radio" name="q3" value="c"> Developing software<br>
+                        <input type="radio" name="q3" value="d"> None of the above
+                    </li>
+                </ol>
+                <button type="submit" onclick="calculateScore()">Submit</button>
+            </form>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources">
+            <h2>Additional Resources</h2>
+            <p>For more information on cybersecurity principles, check out these resources:</p>
+            <ul>
+                <li><a href="https://www.coursera.org/courses/cybersecurity" target="_blank">Coursera Cybersecurity Courses</a></li>
+                <li><a href="https://www.cyber.gov.au/acsc/view-all-content/publications" target="_blank">Australian Cyber Security Centre Publications</a></li>
+                <li><a href="https://www.nist.gov/cyberframework" target="_blank">NIST Cybersecurity Framework</a></li>
+                <li><a href="https://www.cybrary.it/course/introduction-to-cybersecurity/" target="_blank">Cybrary Introduction to Cybersecurity Course</a></li>
+            </ul>
+        </section>
+
+        <!-- Gamification Section -->
+        <section id="gamification">
+            <h2>Gamification</h2>
+            <p>Earn points, badges, and track your progress as you complete modules and quizzes!</p>
+            <div class="gamification-container">
+                <p><strong>Points:</strong> <span id="points">0</span></p>
+                <p><strong>Badges:</strong> <span id="badges">Beginner</span></p>
+                <p><strong>Progress:</strong> <span id="progress">0%</span></p>
+            </div>
+        </section>
+
+        <!-- Navigation Button -->
+        <section class="next-button-container">
+            <a href="../page3/course-page2.html" class="next-button">Next</a>
+        </section>
+        
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2024 Cybersecurity Course</p>
+    </footer>
+
+    <script>
+        // Initial gamification variables
+        let points = 0;
+        let progress = 0;
+
+        // Function to calculate quiz score and add points
+        function calculateScore() {
+            // Sample quiz scoring logic
+            const quizForm = document.getElementById('quizForm');
+            let score = 0;
+
+            if (quizForm.q1.value === 'a') score += 10;
+            if (quizForm.q2.value === 'a') score += 10;
+            if (quizForm.q3.value === 'a') score += 10;
+
+            // Add points and update progress
+            points += score;
+            progress += 25; // assuming quiz completion is 25% progress
+
+            // Update points, badges, and progress
+            document.getElementById('points').innerText = points;
+            document.getElementById('progress').innerText = progress + '%';
+            updateBadges();
+        }
+
+        // Function to update badges based on points
+        function updateBadges() {
+            const badgesElement = document.getElementById('badges');
+            if (points >= 30) {
+                badgesElement.innerText = 'Cybersecurity Novice';
+            }
+            if (points >= 60) {
+                badgesElement.innerText = 'Cybersecurity Explorer';
+            }
+            if (points >= 90) {
+                badgesElement.innerText = 'Cybersecurity Expert';
+            }
+        }
+    </script>
+</body>
+</html>

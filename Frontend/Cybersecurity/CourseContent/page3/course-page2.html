@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Threats and Vulnerabilities</title>
+    <link rel="stylesheet" href="../page3/course-page2.css"> <!-- Update path as necessary -->
+    <style>
+        /* Add some basic styles for gamification elements */
+        .points-badge-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .badge {
+            background-color: #f0c14b;
+            border-radius: 10px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        .points {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Understanding Threats and Vulnerabilities</h1>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#threat-overview">Threat Overview</a></li>
+            <li><a href="#types-of-threats">Types of Threats</a></li>
+            <li><a href="#vulnerabilities">Vulnerabilities</a></li>
+            <li><a href="#impact">Impact of Threats</a></li>
+            <li><a href="#preventive-measures">Preventive Measures</a></li>
+            <li><a href="#video-modules">Video Modules</a></li>
+            <li><a href="#interactive-quiz">Quiz</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Gamification Display -->
+        <div class="points-badge-container">
+            <div class="points">Points: <span id="points">0</span></div>
+            <div class="badge" id="badge" style="display:none;">Badge Earned: Quiz Master</div>
+        </div>
+
+        <!-- Course Sections -->
+        <section id="threat-overview">
+            <h2>Overview of Threats and Vulnerabilities</h2>
+            <p>This section will cover various threats faced by information systems and their vulnerabilities.</p>
+        </section>
+
+        <section id="types-of-threats">
+            <h2>Types of Threats</h2>
+            <ul>
+                <li><strong>Malware:</strong> Software designed to harm, exploit, or otherwise compromise systems.</li>
+                <li><strong>Phishing:</strong> Deceptive attempts to obtain sensitive information by masquerading as a trustworthy entity.</li>
+                <li><strong>DDoS Attacks:</strong> Overloading a service or network to make it unavailable to users.</li>
+            </ul>
+        </section>
+
+        <section id="vulnerabilities">
+            <h2>Understanding Vulnerabilities</h2>
+            <p>Vulnerabilities are weaknesses in a system that can be exploited by threats. It's essential to identify and mitigate them.</p>
+        </section>
+
+        <section id="impact">
+            <h2>Impact of Threats</h2>
+            <p>Threats can lead to data breaches, financial loss, and damage to an organization's reputation. Understanding their impact is crucial for mitigation.</p>
+        </section>
+
+        <section id="preventive-measures">
+            <h2>Preventive Measures</h2>
+            <p>Implementing security policies, training employees, and using security tools can help mitigate threats and vulnerabilities.</p>
+        </section>
+
+        <!-- Video Modules Section -->
+        <section id="video-modules">
+            <h2>Video Modules</h2>
+            <div class="video-module">
+                <h3>Introduction to Threats and Vulnerabilities</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ozVHt05Ez_Q" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-module">
+                <h3>Understanding Malware and Its Impacts</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Bvqyg51Czdk" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-module">
+                <h3>Phishing Attacks: Identification and Prevention</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/XBkzBrXlle0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="interactive-quiz">
+            <h2>Interactive Quiz</h2>
+            <p>Test your knowledge with this quiz:</p>
+            <form id="quizForm">
+                <ol>
+                    <li>
+                        <p>What is malware?</p>
+                        <input type="radio" name="q1" value="a"> A type of software designed to harm systems.<br>
+                        <input type="radio" name="q1" value="b"> A method to secure systems.<br>
+                        <input type="radio" name="q1" value="c"> A hardware component.<br>
+                        <input type="radio" name="q1" value="d"> None of the above.
+                    </li>
+                    <li>
+                        <p>Which of the following is a type of phishing?</p>
+                        <input type="radio" name="q2" value="a"> Social Engineering<br>
+                        <input type="radio" name="q2" value="b"> SQL Injection<br>
+                        <input type="radio" name="q2" value="c"> DDoS Attack<br>
+                        <input type="radio" name="q2" value="d"> None of the above
+                    </li>
+                </ol>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="quiz-result" style="margin-top: 20px;"></div>
+        </section>
+
+        <!-- Navigation Button -->
+        <section class="next-button-container">
+            <a href="../page4/couse-page3.html" class="next-button">Next</a> <!-- Update path as necessary -->
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2024 Ethical Hacking Course</p>
+    </footer>
+
+    <script>
+        // Gamification Logic
+        let points = 0;
+
+        document.getElementById('quizForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const q1Answer = document.querySelector('input[name="q1"]:checked');
+            const q2Answer = document.querySelector('input[name="q2"]:checked');
+            let correctAnswers = 0;
+
+            if (q1Answer && q1Answer.value === 'a') {
+                correctAnswers++;
+            }
+            if (q2Answer && q2Answer.value === 'a') {
+                correctAnswers++;
+            }
+
+            // Calculate points
+            points += correctAnswers * 10; // 10 points for each correct answer
+            document.getElementById('points').innerText = points;
+
+            // Check for badge earning
+            if (points >= 20) {
+                document.getElementById('badge').style.display = 'block';
+            }
+
+            // Show quiz results
+            document.getElementById('quiz-result').innerText = `You answered ${correctAnswers} questions correctly!`;
+        };
+    </script>
+</body>
+</html>

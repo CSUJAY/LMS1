@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Software Development Practices</title>
+    <link rel="stylesheet" href="../page5/course-page4.css"> <!-- Update path as necessary -->
+    <style>
+        .progress-container {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .badge {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: gold;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            margin-right: 10px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .points {
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Secure Software Development Practices</h1>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#secure-coding">Secure Coding Principles</a></li>
+            <li><a href="#testing-methods">Testing Methods</a></li>
+            <li><a href="#code-review">Code Review Process</a></li>
+            <li><a href="#development-lifecycle">Secure Development Lifecycle (SDLC)</a></li>
+            <li><a href="#tools">Tools and Resources</a></li>
+            <li><a href="#video-modules">Video Modules</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Progress Tracker -->
+        <div class="progress-container">
+            <span class="points">Points: <span id="points">0</span></span>
+            <div id="progress" style="margin-top: 10px;">Progress: <span id="progress-count">0</span>/6 completed</div>
+        </div>
+
+        <!-- Course Sections -->
+        <section id="secure-coding">
+            <h2>Secure Coding Principles</h2>
+            <p>Secure coding principles focus on writing code that minimizes security risks, including avoiding vulnerabilities such as SQL injection, cross-site scripting (XSS), and buffer overflows.</p>
+        </section>
+
+        <section id="testing-methods">
+            <h2>Testing Methods</h2>
+            <ul>
+                <li><strong>Static Analysis:</strong> Examines code without executing it to find potential vulnerabilities.</li>
+                <li><strong>Dynamic Analysis:</strong> Tests code while it's running to identify security flaws that only manifest during execution.</li>
+                <li><strong>Penetration Testing:</strong> Simulates attacks to discover security weaknesses in applications.</li>
+            </ul>
+        </section>
+
+        <section id="code-review">
+            <h2>Code Review Process</h2>
+            <p>The code review process involves analyzing code to ensure it follows secure coding practices. Peer reviews help identify potential flaws before the code is deployed.</p>
+        </section>
+
+        <section id="development-lifecycle">
+            <h2>Secure Development Lifecycle (SDLC)</h2>
+            <p>SDLC integrates security into every phase of software development, from planning and design to testing and deployment. This approach ensures security is built into the application from the ground up.</p>
+        </section>
+
+        <section id="tools">
+            <h2>Tools and Resources</h2>
+            <p>There are various tools available for secure software development, including static code analyzers, dynamic testing tools, and threat modeling software.</p>
+        </section>
+
+        <!-- Video Modules Section -->
+        <section id="video-modules">
+            <h2>Video Modules</h2>
+            <div class="video-module">
+                <h3>Introduction to Secure Coding Principles</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pYK802pSufw" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-module">
+                <h3>Penetration Testing and Application Security</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/qEBZc0oxCDM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-module">
+                <h3>Using SDLC for Secure Development</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Fi3_BjVzpqk" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="interactive-quiz">
+            <h2>Interactive Quiz</h2>
+            <p>Test your knowledge with this quiz:</p>
+            <form id="quizForm" onsubmit="return submitQuiz(event);">
+                <ol>
+                    <li>
+                        <p>What is the purpose of static code analysis?</p>
+                        <input type="radio" name="q1" value="a"> To identify vulnerabilities without executing the code.<br>
+                        <input type="radio" name="q1" value="b"> To find security flaws during runtime.<br>
+                        <input type="radio" name="q1" value="c"> To encrypt sensitive data.<br>
+                        <input type="radio" name="q1" value="d"> None of the above.
+                    </li>
+                    <li>
+                        <p>What does SDLC stand for?</p>
+                        <input type="radio" name="q2" value="a"> Software Development Lifecycle<br>
+                        <input type="radio" name="q2" value="b"> System Design Lifecycle<br>
+                        <input type="radio" name="q2" value="c"> Secure Data Layer Code<br>
+                        <input type="radio" name="q2" value="d"> Secure Development Lifecycle
+                    </li>
+                </ol>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Navigation Button -->
+        <section class="next-button-container">
+            <a href="../page6/course-page5.html" class="next-button">Next</a> <!-- Update path as necessary -->
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2024 Ethical Hacking Course</p>
+    </footer>
+
+    <script>
+        let points = 0;
+        let completedSections = 0;
+
+        // Function to update progress
+        function updateProgress() {
+            const progressCount = document.getElementById('progress-count');
+            progressCount.textContent = completedSections;
+            const progressPercentage = Math.floor((completedSections / 6) * 100);
+            // You can add logic here to update a progress bar if needed
+        }
+
+        // Function to handle quiz submission
+        function submitQuiz(event) {
+            event.preventDefault(); // Prevent form submission
+            const form = event.target;
+            let score = 0;
+
+            // Check answers
+            if (form.q1.value === 'a') score++;
+            if (form.q2.value === 'a') score++;
+
+            // Update points
+            points += score * 10; // Each correct answer earns 10 points
+            document.getElementById('points').textContent = points;
+
+            // Mark the quiz as completed
+            completedSections++;
+            updateProgress();
+
+            // Display feedback
+            alert(`You scored ${score} out of 2!`);
+            form.reset(); // Reset the form for the next attempt
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>

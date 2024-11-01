@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Safe Hacking Environment Setup</title>
+    <link rel="stylesheet" href="../page2/cour-details2.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 100vh; /* Full height */
+            position: fixed; /* Fixed position */
+            overflow-y: auto; /* Scroll if content exceeds view height */
+        }
+
+        .sidebar h2 {
+            color: #fff;
+        }
+
+        .sidebar a {
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content styles */
+        main {
+            flex-grow: 1;
+            margin-left: 260px; /* Leave space for sidebar */
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 100vh; /* Full height */
+            overflow-y: auto; /* Scroll if content exceeds view height */
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            line-height: 30px; /* Center text vertically */
+            transition: width 0.5s;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .badge {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #FF6F00, #FFB300); /* Gradient background */
+            border-radius: 25px; /* Rounded edges */
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            display: none; /* Hidden by default */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .badge:hover:before {
+            opacity: 0; /* Fade out effect on hover */
+        }
+
+        .next-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .next-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .next-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Enhanced Quiz Styling */
+        .quiz-container {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-question {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .quiz-question:hover {
+            background-color: #f1f1f1; /* Light grey on hover */
+        }
+
+        .quiz-question p {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .quiz-container input {
+            margin-right: 10px;
+        }
+
+        .quiz-container button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quiz-container button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        /* Video container styles */
+        .video-container {
+            margin-top: 20px; /* Adjust spacing above videos */
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 200px; /* Adjust height as needed */
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            margin-bottom: 20px; /* Spacing between videos */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Advanced Safe Hacking Environment Setup</h1>
+    </header>
+
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <a href="#setup-overview">Course Overview</a>
+        <a href="#learning-objectives">Learning Objectives</a>
+        <a href="#course-modules">Course Modules</a>
+        <a href="#supplementary-guide">Supplementary Guide</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#glossary">Glossary</a>
+        <a href="#interactive-quiz">Quiz</a>
+        <a href="../page3/cour-details3.html">Next Course</a>
+    </div>
+
+    <main>
+        <!-- Progress Tracker Section -->
+        <section id="progress-tracker">
+            <h2>Course Progress</h2>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar">0%</div>
+            </div>
+        </section>
+
+        <!-- Course Sections -->
+        <section id="setup-overview">
+            <h2>Overview of Safe Hacking Environments</h2>
+            <p>In this section, we will discuss how to set up a secure environment for ethical hacking, including the use of virtual machines and safe networking practices.</p>
+        </section>
+
+        <section id="importance">
+            <h2>Importance of a Safe Environment</h2>
+            <p>Creating a safe hacking environment is crucial to prevent unauthorized access to systems and data, ensuring ethical hackers can practice their skills responsibly.</p>
+        </section>
+
+        <!-- Additional Information Section -->
+        <section id="requirements">
+            <h2>Course Requirements</h2>
+            <p>Before starting this course, ensure you have the following:</p>
+            <ul>
+                <li>A computer with at least 8GB of RAM.</li>
+                <li>Virtualization software (e.g., VirtualBox or VMware).</li>
+                <li>Basic knowledge of networking concepts.</li>
+            </ul>
+        </section>
+
+        <section id="target-audience">
+            <h2>Target Audience</h2>
+            <p>This course is intended for:</p>
+            <ul>
+                <li>Students interested in cybersecurity.</li>
+                <li>IT professionals looking to expand their skills.</li>
+                <li>Anyone looking to understand ethical hacking practices.</li>
+            </ul>
+        </section>
+
+        <!-- Video Section -->
+        <section id="video-section" class="video-container">
+            <h2>Installation Videos</h2>
+            <iframe src="https://www.youtube.com/embed/syHSjop-7sw" title="Introduction to Safe Hacking" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/rCPXPT2QKVQ" title="Another Installation Guide" allowfullscreen></iframe>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="interactive-quiz" class="quiz-container">
+            <h2>Interactive Quiz</h2>
+            <div class="quiz-question">
+                <p>1. What is the primary purpose of a safe hacking environment?</p>
+                <input type="radio" name="q1" value="A"> A) To hack into systems<br>
+                <input type="radio" name="q1" value="B"> B) To practice ethical hacking without causing harm<br>
+                <input type="radio" name="q1" value="C"> C) To create viruses<br>
+            </div>
+            <div class="quiz-question">
+                <p>2. Which software is commonly used for virtualization?</p>
+                <input type="radio" name="q2" value="A"> A) Notepad<br>
+                <input type="radio" name="q2" value="B"> B) VirtualBox<br>
+                <input type="radio" name="q2" value="C"> C) Photoshop<br>
+            </div>
+            <button onclick="submitQuiz()">Submit Quiz</button>
+            <div id="quiz-result" style="margin-top: 20px;"></div>
+        </section>
+
+        <!-- Gamification Badges Section -->
+        <div class="badge-container">
+            <div class="badge" id="badge1">Course Completion Badge</div>
+            <div class="badge" id="badge2">Quiz Master Badge</div>
+        </div>
+
+        <div class="next-button-container">
+            <a class="next-button" href="../page3/cour-details3.html">Proceed to Next Course</a>
+        </div>
+    </main>
+
+    <script>
+        // Update progress bar
+        function updateProgress(progress) {
+            const progressBar = document.getElementById('progress-bar');
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = progress + '%';
+        }
+
+        // Function to simulate progress
+        function simulateProgress() {
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                updateProgress(progress);
+                if (progress >= 100) {
+                    clearInterval(interval);
+                }
+            }, 500);
+        }
+
+        // Call the simulateProgress function
+        simulateProgress();
+
+        // Quiz submission logic
+        function submitQuiz() {
+            let score = 0;
+            if (document.querySelector('input[name="q1"]:checked')?.value === 'B') {
+                score++;
+            }
+            if (document.querySelector('input[name="q2"]:checked')?.value === 'B') {
+                score++;
+            }
+            document.getElementById('quiz-result').textContent = `Your score: ${score}/2`;
+
+            // Display badge if quiz is completed successfully
+            if (score === 2) {
+                document.getElementById('badge2').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

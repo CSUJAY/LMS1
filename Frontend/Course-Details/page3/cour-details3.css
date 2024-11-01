@@ -1,0 +1,173 @@
+/* cour-details3.css */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #4b6cb7;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #3a4f7a;
+    color: #f9f9f9;
+    padding: 1rem;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.8rem;
+}
+
+.sidebar ul li a {
+    color: #f9f9f9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Main Content */
+main {
+    margin-left: 220px;
+    padding: 2rem;
+    width: calc(100% - 240px);
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #4b6cb7;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+p, ul, ol {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Video Section */
+.video-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+}
+
+/* Quiz Section */
+#quizForm ol {
+    list-style: decimal;
+    padding-left: 1.2rem;
+}
+
+#quizForm p {
+    font-weight: bold;
+}
+
+#quizForm input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+button[type="submit"] {
+    background-color: #4b6cb7;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button[type="submit"]:hover {
+    background-color: #3a4f7a;
+}
+
+/* Resources Section */
+section#resources ul {
+    list-style-type: none;
+}
+
+section#resources ul li {
+    margin-bottom: 0.5rem;
+}
+
+section#resources ul li a {
+    color: #4b6cb7;
+    text-decoration: none;
+}
+
+section#resources ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation Button */
+.next-button-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.next-button {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #333;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.next-button:hover {
+    background-color: #ffb400;
+}
+
+/* Footer */
+.page-footer {
+    background-color: #4b6cb7;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

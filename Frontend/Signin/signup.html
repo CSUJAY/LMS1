@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="./signup.css"/>
+
+</head>
+<body>
+
+<div class="main-container" id="signupContainer">
+  <div class="signup-form">
+    <div class="logo-container">
+      <img src="../Images/logo.png" alt="Logo" class="logo">
+    </div>
+    <h2>Sign Up</h2>
+    <label for="signupEmail">Email</label>
+    <input type="email" id="signupEmail" placeholder="Enter your email" required>
+    <label for="signupPassword">Password</label>
+    <input type="password" id="signupPassword" placeholder="Enter your password" required>
+    <label for="signupConfirmPassword">Confirm Password</label>
+    <input type="password" id="signupConfirmPassword" placeholder="Confirm your password" required>
+    
+    <label for="userRole">Select Role:</label>
+    <select id="userRole" required>
+      <option value="" disabled selected>Select your role</option>
+      <option value="student">Student</option>
+      <option value="teacher">Teacher</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <button class="signup-button" onclick="signup()">Sign Up</button>
+    <p class="login-link">Already have an account? <a href="../Login/login.html">Login here</a></p>
+  </div>
+</div>
+
+<script>
+  function signup() {
+    const email = document.getElementById("signupEmail").value;
+    const password = document.getElementById("signupPassword").value;
+    const confirmPassword = document.getElementById("signupConfirmPassword").value;
+    const role = document.getElementById("userRole").value;
+    
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    // Here, add the backend call to save the new user information (for demonstration purposes, an alert is used)
+    alert("Signed up successfully! Redirecting to login page...");
+
+    // Ensure the redirect is done after the alert is acknowledged
+    setTimeout(() => {
+      window.location.href = "../Login/login.html?role=" + role; // Pass the selected role to the login page
+    }, 2000); // Redirect after 2 seconds
+  }
+</script>
+
+
+</body>
+</html>

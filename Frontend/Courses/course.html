@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Course | TechStream</title>
+    <link rel="stylesheet" href="course.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>TechStream</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="course.html">Courses</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="../Login/login.html">Login</a>
+            <a href="../Signin/signup.html">Sign Up</a>
+        </div>
+    </header>
+
+    <!-- Search and Filter Section -->
+    <div class="search-container">
+        <input type="text" class="search-bar" id="searchBar" placeholder="Search for courses..." oninput="filterCourses()">
+    </div>
+    <div class="filter-container">
+        <label class="filter"><input type="checkbox" value="Beginner" onclick="filterByLevel()"> Beginner</label>
+        <label class="filter"><input type="checkbox" value="Intermediate" onclick="filterByLevel()"> Intermediate</label>
+        <label class="filter"><input type="checkbox" value="Advanced" onclick="filterByLevel()"> Advanced</label>
+    </div>
+
+    <!-- Course Display Section -->
+    <div class="course-container" id="courseContainer">
+        <!-- Course Card 1 -->
+        <div class="course-card" data-title="Ethical Hacking" data-level="Beginner">
+            <img src="../Images/course1.jpg" alt="Ethical Hacking Course Image">
+            <div class="course-info">
+                <h2 class="course-title">Ethical Hacking</h2>
+                <p class="course-instructor">Instructor: John Doe</p>
+                <div class="course-rating">⭐⭐⭐⭐⭐</div>
+                <p class="course-price">Rs.99.99</p>
+                <p class="course-description">Learn ethical hacking and security protocols in this introductory course.</p>
+                <div class="course-buttons">
+                    <button class="course-button" onclick="openModal('ethicalHacking')">Enroll Now</button>
+                    <button class="course-button" onclick="window.location.href='../CourseContent/course-details.html'">Go to Course</button>
+                </div>
+                <div class="reviews">
+                    <strong>Reviews:</strong> 0/5 from 0 students
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Card 2 -->
+        <div class="course-card" data-title="Cyber Security and Privacy" data-level="Advanced">
+            <img src="../Images/course3.jpg" alt="Cyber Security and Privacy Course Image">
+            <div class="course-info">
+                <h2 class="course-title">Cyber Security and Privacy</h2>
+                <p class="course-instructor">Instructor: Shivam</p>
+                <div class="course-rating">⭐⭐⭐⭐⭐</div>
+                <p class="course-price">Rs.99.99</p>
+                <p class="course-description">An in-depth course on cyber security threats and privacy measures.</p>
+                <div class="course-buttons">
+                    <button class="course-button" onclick="openModal('cyberSecurity')">Enroll Now</button>
+                    <button class="course-button" onclick="window.location.href='../Cybersecurity/cyber-intro.html'">Go to Course</button>
+                </div>
+                <div class="reviews">
+                    <strong>Reviews:</strong> 0/5 from 0 students
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="no-results" id="noResults">No results found.</div>
+
+    <!-- FAQs Section -->
+    <div class="faq">
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <p><strong>Q: What is the duration of the course?</strong></p>
+            <p class="faq-answer">The duration varies based on the selected option during enrollment.</p>
+        </div>
+        <div class="faq-item">
+            <p><strong>Q: Will I receive a certificate upon completion?</strong></p>
+            <p class="faq-answer">Yes, a certificate will be provided after successful completion of the course.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Enroll Options -->
+    <div class="modal" id="enrollModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Select Course Duration</h3>
+            <button class="duration-option" onclick="enrollCourse('1 Week')">1 Week</button>
+            <button class="duration-option" onclick="enrollCourse('2 Weeks')">2 Weeks</button>
+            <button class="duration-option" onclick="enrollCourse('3 Weeks')">3 Weeks</button>
+            <button class="duration-option" onclick="enrollCourse('1 Month')">1 Month</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2024 TechStream. All rights reserved.</p>
+        <div class="social-buttons">
+            <a href="#">Share on Facebook</a>
+            <a href="#">Share on Twitter</a>
+            <a href="#">Share on LinkedIn</a>
+        </div>
+    </div>
+
+    <script src="course.js"></script>
+    <script>
+        // JavaScript for search functionality
+        function filterCourses() {
+            const searchValue = document.getElementById('searchBar').value.toLowerCase();
+            const courses = document.querySelectorAll('.course-card');
+            let hasResults = false;
+
+            courses.forEach(course => {
+                const title = course.getAttribute('data-title').toLowerCase();
+                if (title.includes(searchValue)) {
+                    course.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+            document.getElementById('noResults').style.display = hasResults ? 'none' : 'block';
+        }
+
+        function filterByLevel() {
+            const selectedLevels = Array.from(document.querySelectorAll('.filter input:checked')).map(el => el.value);
+            const courses = document.querySelectorAll('.course-card');
+            courses.forEach(course => {
+                const level = course.getAttribute('data-level');
+                course.style.display = selectedLevels.includes(level) || selectedLevels.length === 0 ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

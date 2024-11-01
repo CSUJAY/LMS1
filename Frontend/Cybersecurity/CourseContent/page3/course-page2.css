@@ -1,0 +1,106 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background for better readability */
+    color: #333; /* Dark text color */
+}
+
+/* Header Styles */
+header {
+    background-color: #4CAF50; /* Dark green background */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Sidebar Navigation Styles */
+.sidebar {
+    width: 200px;
+    background-color: #333; /* Dark background for sidebar */
+    color: white;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    color: white; /* White text for links */
+    text-decoration: none; /* Remove underline */
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757; /* Darker background on hover */
+}
+
+/* Main Content Styles */
+main {
+    margin-left: 220px; /* Space for sidebar */
+    padding: 20px;
+}
+
+h2 {
+    color: #4CAF50; /* Green headings */
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 20px; /* Space between sections */
+    padding: 15px;
+    background-color: white; /* White background for sections */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Quiz Form Styles */
+form {
+    margin-top: 10px;
+}
+
+ol {
+    margin-left: 20px; /* Indent list */
+}
+
+input[type="radio"] {
+    margin-right: 5px; /* Space between radio and label */
+}
+
+/* Next Button Styles */
+.next-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.next-button {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    padding: 10px 20px; /* Button padding */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.next-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Footer Styles */
+.page-footer {
+    background-color: #333; /* Dark background for footer */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

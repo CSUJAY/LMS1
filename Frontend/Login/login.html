@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="./login.css"/>
+</head>
+<body>
+
+<div class="main-container" id="loginContainer">
+  <div class="login-form">
+    <div class="logo-container">
+      <img src="../Images/techstream-logo.png" alt="TechStream Logo" class="logo">
+    </div>
+    <h2>Login</h2>
+    <label for="loginEmail">Email</label>
+    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+    <label for="loginPassword">Password</label>
+    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+    <button class="login-button" id="loginButton" onclick="login()">Login</button>
+    <p class="signup-link">Don't have an account? <a href="../Signin/signup.html">Sign up here</a></p>
+  </div>
+</div>
+
+<script>
+  function login() {
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+    const loginButton = document.getElementById("loginButton");
+
+    // Basic email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return; // Exit if email is invalid
+    }
+
+    // Disable the button to prevent multiple clicks
+    loginButton.disabled = true;
+    loginButton.innerText = "Logging in...";
+
+    // Simulate a backend call for demonstration purposes
+    setTimeout(() => {
+      // In a real scenario, this would be replaced with an actual authentication call
+      alert("Logged in successfully!");
+
+      // Mock user role (in a real scenario, fetch this from the server)
+      const role = new URLSearchParams(window.location.search).get('role');
+
+      // Redirect based on role
+      if (role === "student") {
+  window.location.href = "student-dashboard.html"; // Adjust the path if needed
+} else if (role === "teacher") {
+  window.location.href = "../TeacherModule/index.html"; // Ensure this path is correct
+} else if (role === "admin") {
+  window.location.href = "admin-dashboard.html"; // Adjust the path if needed
+} else {
+  alert("Invalid role. Redirecting to default dashboard.");
+  window.location.href = "default-dashboard.html"; // Adjust the path if needed
+}
+    }, 1000); // Simulate a delay of 1 second
+  }
+</script>
+
+</body>
+</html>

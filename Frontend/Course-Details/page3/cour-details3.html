@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Network Basics and Security Protocols</title>
+    <link rel="stylesheet" href="../page3/cour-details3.css">
+    <style>
+        /* Basic styling for badges and progress bar */
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .badge {
+            display: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .progress {
+            height: 20px;
+            width: 0;
+            background-color: #4caf50;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .video-container {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Understanding Network Basics and Security Protocols</h1>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#network-basics">Network Basics</a></li>
+            <li><a href="#types-of-networks">Types of Networks</a></li>
+            <li><a href="#network-devices">Network Devices</a></li>
+            <li><a href="#security-protocols">Security Protocols</a></li>
+            <li><a href="#secure-communication">Secure Communication</a></li>
+            <li><a href="#glossary">Glossary</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Course Sections -->
+        <section id="network-basics">
+            <h2>Introduction to Network Basics</h2>
+            <p>This section covers foundational concepts of networking, including IP addressing, subnetting, and network topologies.</p>
+        </section>
+
+        <section id="types-of-networks">
+            <h2>Types of Networks</h2>
+            <p>Understand the differences between various network types such as LAN, WAN, MAN, and PAN, and their applications.</p>
+        </section>
+
+        <section id="network-devices">
+            <h2>Essential Network Devices</h2>
+            <ul>
+                <li><strong>Router:</strong> Directs data packets within and between networks.</li>
+                <li><strong>Switch:</strong> Connects devices within a local area network (LAN).</li>
+                <li><strong>Firewall:</strong> Monitors and controls network traffic for security.</li>
+                <li><strong>Access Point:</strong> Enables wireless connectivity for network devices.</li>
+            </ul>
+        </section>
+
+        <section id="security-protocols">
+            <h2>Introduction to Security Protocols</h2>
+            <p>Security protocols are essential for protecting data and ensuring secure communication across networks.</p>
+            <ul>
+                <li><strong>HTTPS:</strong> An extension of HTTP for secure web browsing.</li>
+                <li><strong>SSL/TLS:</strong> Used to encrypt data transmitted over the internet.</li>
+                <li><strong>IPSec:</strong> A suite of protocols for secure internet protocol communications.</li>
+                <li><strong>SSH:</strong> Provides secure remote access to servers and devices.</li>
+            </ul>
+        </section>
+
+        <section id="secure-communication">
+            <h2>Secure Communication</h2>
+            <p>Learn about methods and best practices for ensuring secure communication over networks, including the use of encryption and multi-factor authentication.</p>
+        </section>
+
+        <!-- Video Tutorials Section -->
+        <section id="video-tutorials">
+            <h2>Video Tutorials</h2>
+            <p>These videos provide a deeper understanding of network basics and security protocols:</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/P6SZLcGE4us" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/4_zSIXb7tLQ" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+        
+        
+
+        <!-- Quiz Section -->
+        <section id="quiz">
+            <h2>Quiz on Network Basics and Security Protocols</h2>
+            <form id="quizForm" onsubmit="return submitQuiz(event)">
+                <ol>
+                    <li>
+                        <p>What does IP in IP address stand for?</p>
+                        <input type="radio" name="q1" value="a"> Internet Provider<br>
+                        <input type="radio" name="q1" value="b"> Internet Protocol<br>
+                        <input type="radio" name="q1" value="c"> International Port<br>
+                        <input type="radio" name="q1" value="d"> Intranet Program
+                    </li>
+                    <li>
+                        <p>Which protocol is used to secure data transmitted over the web?</p>
+                        <input type="radio" name="q2" value="a"> HTTP<br>
+                        <input type="radio" name="q2" value="b"> FTP<br>
+                        <input type="radio" name="q2" value="c"> HTTPS<br>
+                        <input type="radio" name="q2" value="d"> SMTP
+                    </li>
+                    <li>
+                        <p>What device is commonly used to connect multiple devices in a LAN?</p>
+                        <input type="radio" name="q3" value="a"> Router<br>
+                        <input type="radio" name="q3" value="b"> Switch<br>
+                        <input type="radio" name="q3" value="c"> Firewall<br>
+                        <input type="radio" name="q3" value="d"> Modem
+                    </li>
+                </ol>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="quiz-result" style="margin-top: 20px;"></div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources">
+            <h2>Additional Resources</h2>
+            <ul>
+                <li><a href="https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/networking-basics.html" target="_blank">Networking Basics - Cisco</a></li>
+                <li><a href="https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/" target="_blank">TLS Handshake - Cloudflare</a></li>
+                <li><a href="https://www.tutorialspoint.com/computer_network/index.htm" target="_blank">Computer Network Basics</a></li>
+                <li><a href="https://www.cybrary.it/course/introduction-to-networking/" target="_blank">Networking Course - Cybrary</a></li>
+            </ul>
+        </section>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress" id="progress-bar">0%</div>
+        </div>
+
+        <!-- Gamification Badges Section -->
+        <div class="badge-container">
+            <div class="badge" id="badge1">Course Completion Badge</div>
+            <div class="badge" id="badge2">Quiz Master Badge</div>
+        </div>
+
+        <!-- Navigation Button -->
+        <section class="next-button-container">
+            <a href="../page4/cour-details4.html" class="next-button">Next</a>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2024 Ethical Hacking Course</p>
+    </footer>
+
+    <script>
+        // Update progress bar
+        function updateProgress(progress) {
+            const progressBar = document.getElementById('progress-bar');
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = progress + '%';
+        }
+
+        // Function to simulate progress
+        function simulateProgress() {
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                updateProgress(progress);
+                if (progress >= 100) {
+                    clearInterval(interval);
+                }
+            }, 500);
+        }
+
+        // Call the simulateProgress function
+        simulateProgress();
+
+        // Quiz submission logic
+        function submitQuiz(event) {
+            event.preventDefault(); // Prevent form submission
+            let score = 0;
+            if (document.querySelector('input[name="q1"]:checked')?.value === 'b') score++;
+            if (document.querySelector('input[name="q2"]:checked')?.value === 'c') score++;
+            if (document.querySelector('input[name="q3"]:checked')?.value === 'b') score++;
+
+            const result = document.getElementById('quiz-result');
+            result.innerHTML = `<h3>Your Score: ${score}/3</h3>`;
+            if (score === 3) {
+                document.getElementById('badge2').style.display = 'inline-block';
+            }
+        }
+    </script>
+</body>
+</html>

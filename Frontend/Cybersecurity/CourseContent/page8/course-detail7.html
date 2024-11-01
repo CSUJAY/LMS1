@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Policies and Compliance</title>
+    <link rel="stylesheet" href="../page8/course-detail7.css"> <!-- Update path as necessary -->
+    <style>
+        .badge {
+            display: inline-block;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            display: none; /* Hidden by default */
+        }
+        .progress {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            height: 20px;
+            background-color: #4CAF50;
+            width: 0; /* Dynamic width for progress */
+            border-radius: 5px;
+        }
+        .score {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cybersecurity Policies and Compliance</h1>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#policy-overview">Policy Overview</a></li>
+            <li><a href="#compliance-frameworks">Compliance Frameworks</a></li>
+            <li><a href="#regulatory-standards">Regulatory Standards</a></li>
+            <li><a href="#implementing-policies">Implementing Policies</a></li>
+            <li><a href="#video-modules">Video Modules</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Course Sections -->
+        <section id="policy-overview">
+            <h2>Policy Overview</h2>
+            <p>This section introduces cybersecurity policies, their importance in an organization, and how they help in protecting assets and mitigating risks.</p>
+        </section>
+
+        <section id="compliance-frameworks">
+            <h2>Compliance Frameworks</h2>
+            <p>Learn about the various compliance frameworks, such as NIST, ISO 27001, and PCI-DSS, that provide guidelines for securing information and systems.</p>
+        </section>
+
+        <section id="regulatory-standards">
+            <h2>Regulatory Standards</h2>
+            <p>Understand important regulatory standards like GDPR, HIPAA, and SOX, which establish requirements for data protection and privacy in different industries.</p>
+        </section>
+
+        <section id="implementing-policies">
+            <h2>Implementing Cybersecurity Policies</h2>
+            <p>Explore steps for implementing effective cybersecurity policies, including assessing risks, defining policy objectives, and establishing monitoring mechanisms.</p>
+        </section>
+
+        <!-- Video Modules Section -->
+        <section id="video-modules">
+            <h2>Video Modules</h2>
+            <div class="video-module">
+                <h3>Introduction to Cybersecurity Policies</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/WkmEWcjkDbA" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-module">
+                <h3>Understanding Compliance Frameworks</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/kD3YihiTcWE" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Progress Bar Section -->
+        <section>
+            <h2>Progress Tracker</h2>
+            <div class="progress">
+                <div class="progress-bar" id="progressBar" style="width: 0;"></div>
+            </div>
+            <div class="score" id="score">Score: 0</div>
+            <div class="badges">
+                <span class="badge" id="quizBadge">Quiz Master</span>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="interactive-quiz">
+            <h2>Interactive Quiz</h2>
+            <p>Test your knowledge with this quiz:</p>
+            <form id="quizForm">
+                <ol>
+                    <li>
+                        <p>Which of the following is a common cybersecurity compliance framework?</p>
+                        <input type="radio" name="q1" value="a"> GDPR<br>
+                        <input type="radio" name="q1" value="b"> HIPAA<br>
+                        <input type="radio" name="q1" value="c"> ISO 27001<br>
+                        <input type="radio" name="q1" value="d"> All of the above
+                    </li>
+                    <li>
+                        <p>What is the primary purpose of cybersecurity policies?</p>
+                        <input type="radio" name="q2" value="a"> To protect company reputation<br>
+                        <input type="radio" name="q2" value="b"> To set guidelines for information security<br>
+                        <input type="radio" name="q2" value="c"> To monitor employee performance<br>
+                        <input type="radio" name="q2" value="d"> None of the above
+                    </li>
+                </ol>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Navigation Button -->
+        <section class="next-button-container">
+            <a href="../page9/project.html" class="next-button">Next</a> <!-- Update path as necessary -->
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2024 Cybersecurity and Privacy Course</p>
+    </footer>
+
+    <script>
+        const quizForm = document.getElementById('quizForm');
+        const progressBar = document.getElementById('progressBar');
+        const scoreDisplay = document.getElementById('score');
+        const quizBadge = document.getElementById('quizBadge');
+
+        let score = 0;
+
+        quizForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page refresh
+            
+            // Evaluate quiz answers
+            const answers = {
+                q1: 'd', // Correct answer for q1
+                q2: 'b'  // Correct answer for q2
+            };
+
+            for (const [question, answer] of Object.entries(answers)) {
+                const userAnswer = quizForm.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer && userAnswer.value === answer) {
+                    score++;
+                }
+            }
+
+            // Update score display
+            scoreDisplay.innerText = `Score: ${score}`;
+            updateProgress();
+            checkBadge();
+        });
+
+        function updateProgress() {
+            const progress = (score / 2) * 100; // Assuming 2 questions in the quiz
+            progressBar.style.width = `${progress}%`;
+        }
+
+        function checkBadge() {
+            if (score === 2) {
+                quizBadge.style.display = 'inline-block'; // Show badge if all answers are correct
+            }
+        }
+    </script>
+</body>
+</html>

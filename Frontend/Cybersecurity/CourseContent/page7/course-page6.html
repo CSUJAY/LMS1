@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Assessment and Management</title>
+    <link rel="stylesheet" href="../page7/course-detail6.css"> <!-- Update path as necessary -->
+    <style>
+        .badge {
+            display: inline-block;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .progress {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            height: 20px;
+            background-color: #4CAF50;
+            width: 0; /* Dynamic width for progress */
+            border-radius: 5px;
+        }
+        .score {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Risk Assessment and Management</h1>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#risk-overview">Risk Overview</a></li>
+            <li><a href="#assessment-methods">Assessment Methods</a></li>
+            <li><a href="#management-strategies">Management Strategies</a></li>
+            <li><a href="#monitoring-evaluation">Monitoring and Evaluation</a></li>
+            <li><a href="#video-modules">Video Modules</a></li>
+            <li><a href="#interactive-quiz">Quiz</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Course Sections -->
+        <section id="risk-overview">
+            <h2>Risk Overview</h2>
+            <p>This section provides an introduction to risk assessment and management, including the significance of identifying and mitigating potential threats.</p>
+        </section>
+
+        <section id="assessment-methods">
+            <h2>Risk Assessment Methods</h2>
+            <p>Learn about qualitative and quantitative risk assessment techniques used to evaluate potential risks within a system or organization.</p>
+        </section>
+
+        <section id="management-strategies">
+            <h2>Risk Management Strategies</h2>
+            <p>Risk management strategies involve risk avoidance, mitigation, transfer, and acceptance. Each approach is designed to reduce the impact of risks effectively.</p>
+        </section>
+
+        <section id="monitoring-evaluation">
+            <h2>Risk Monitoring and Evaluation</h2>
+            <p>Regular monitoring and evaluation are crucial for maintaining effective risk management and making improvements as needed.</p>
+        </section>
+
+        <!-- Video Modules Section -->
+        <section id="video-modules">
+            <h2>Video Modules</h2>
+            <div class="video-module">
+                <h3>Understanding Risk Assessment</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/qVGN5qPDkVc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-module">
+                <h3>Risk Management Techniques</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/IP-E75FGFkU" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Progress Bar Section -->
+        <section>
+            <h2>Progress Tracker</h2>
+            <div class="progress">
+                <div class="progress-bar" id="progressBar" style="width: 0;"></div>
+            </div>
+            <div class="score" id="score">Score: 0</div>
+            <div class="badges">
+                <span class="badge" id="quizBadge" style="display: none;">Quiz Master</span>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="interactive-quiz">
+            <h2>Interactive Quiz</h2>
+            <p>Test your knowledge with this quiz:</p>
+            <form id="quizForm">
+                <ol>
+                    <li>
+                        <p>Which of the following is a risk management strategy?</p>
+                        <input type="radio" name="q1" value="a"> Avoidance<br>
+                        <input type="radio" name="q1" value="b"> Enhancement<br>
+                        <input type="radio" name="q1" value="c"> Detection<br>
+                        <input type="radio" name="q1" value="d"> None of the above
+                    </li>
+                    <li>
+                        <p>What is the purpose of risk monitoring?</p>
+                        <input type="radio" name="q2" value="a"> To eliminate risks<br>
+                        <input type="radio" name="q2" value="b"> To track and manage risks<br>
+                        <input type="radio" name="q2" value="c"> To identify system failures<br>
+                        <input type="radio" name="q2" value="d"> None of the above
+                    </li>
+                </ol>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Navigation Button -->
+        <section class="next-button-container">
+            <a href="../page8/course-detail7.html" class="next-button">Next</a> <!-- Update path as necessary -->
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2024 Ethical Hacking Course</p>
+    </footer>
+
+    <script>
+        const quizForm = document.getElementById('quizForm');
+        const progressBar = document.getElementById('progressBar');
+        const scoreDisplay = document.getElementById('score');
+        const quizBadge = document.getElementById('quizBadge');
+
+        let score = 0;
+
+        quizForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page refresh
+            
+            // Evaluate quiz answers
+            const answers = {
+                q1: 'a', // Correct answer for q1
+                q2: 'b'  // Correct answer for q2
+            };
+
+            for (const [question, answer] of Object.entries(answers)) {
+                const userAnswer = quizForm.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer && userAnswer.value === answer) {
+                    score++;
+                }
+            }
+
+            // Update score display
+            scoreDisplay.innerText = `Score: ${score}`;
+            updateProgress();
+            checkBadge();
+        });
+
+        function updateProgress() {
+            const progress = (score / 2) * 100; // Assuming 2 questions in the quiz
+            progressBar.style.width = `${progress}%`;
+        }
+
+        function checkBadge() {
+            if (score === 2) {
+                quizBadge.style.display = 'inline-block'; // Show badge if all answers are correct
+            }
+        }
+    </script>
+</body>
+</html>

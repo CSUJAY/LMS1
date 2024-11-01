@@ -1,0 +1,301 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: linear-gradient(135deg, #9d50bb, #6e48aa);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Container to handle sidebar and main content layout */
+.content-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 240px;
+    background: linear-gradient(135deg, #1d1f27, #3c3f4e);
+    color: #fff;
+    padding-top: 20px;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    transition: width 0.3s;
+}
+
+.sidebar:hover {
+    width: 260px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #ffffffc2;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background 0.3s, color 0.3s;
+    font-size: 1.05em;
+    border-radius: 6px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a:focus {
+    background: #575a66;
+    color: #fff;
+}
+
+.sidebar ul li.active a {
+    background-color: #4c4f5d;
+    color: #fff;
+}
+
+/* Main content layout */
+main {
+    margin-left: 260px;
+    padding: 30px;
+    max-width: 900px;
+    flex: 1;
+}
+
+/* Header Styling */
+.page-header h1 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1.2em;
+    color: #e0e0e0;
+}
+
+/* Section Styles */
+section {
+    margin-top: 20px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+/* Video Styling */
+video {
+    width: 100%;
+    max-width: 800px; /* Increase max-width to make it larger */
+    height: auto; /* Keep aspect ratio */
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Quiz Container Styling */
+.quiz {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.quiz:hover {
+    transform: scale(1.02);
+}
+
+/* Question Label Styling */
+.quiz label {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #343a40;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.quiz label:hover {
+    color: #007bff;
+}
+
+/* Custom Select Styling */
+.quiz select {
+    padding: 12px;
+    margin-top: 10px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #ffffff;
+    color: #333;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.quiz select:hover,
+.quiz select:focus {
+    border-color: #0056b3;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.4);
+    outline: none;
+}
+
+/* Custom Radio Button Styling */
+.quiz input[type="radio"] {
+    display: none;
+}
+
+.quiz label.radio-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: #e9ecef;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.quiz input[type="radio"]:checked + label.radio-label {
+    background: #007bff;
+    color: #ffffff;
+}
+
+.quiz input[type="radio"]:hover + label.radio-label {
+    background: #b3d7ff;
+}
+
+/* Submit Button Styling */
+.quiz button {
+    padding: 12px 20px;
+    margin-top: 20px;
+    background-color: #28a745;
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quiz button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Result Display Styling */
+.quiz #quizResult {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #343a40;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    border-left: 5px solid #28a745;
+    animation: fadeInResult 0.4s ease-out;
+}
+
+@keyframes fadeInResult {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+.page-footer {
+    text-align: center;
+    padding: 12px 0;
+    background-color: #282c34;
+    color: #fff;
+    font-size: 0.9em;
+    margin-top: 20px;
+    border-top: 2px solid #ccc;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+section, .page-header, .page-footer {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .quiz select, .quiz button {
+        width: 100%;
+    }
+}
+
+/* Additional styles can be added below this line */
+
+/* Example of new CSS styles added */
+
+.next-button-container {
+    text-align: center; /* Center the button */
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+.next-button {
+    padding: 10px 20px; /* Add padding */
+    font-size: 16px; /* Font size */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.next-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

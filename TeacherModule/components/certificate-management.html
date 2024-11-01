@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <section id="certificates" class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Certificate Management</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-lg font-semibold mb-4">Issue New Certificate</h3>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Select Course</label>
+                        <select class="w-full border rounded-lg px-3 py-2">
+                            <option>Web Development Basics</option>
+                            <option>Advanced JavaScript</option>
+                            <option>Python Programming</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Select Student</label>
+                        <select class="w-full border rounded-lg px-3 py-2">
+                            <option>John Doe</option>
+                            <option>Jane Smith</option>
+                            <option>Mike Johnson</option>
+                        </select>
+                    </div>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                        Generate Certificate
+                    </button>
+                </form>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-lg font-semibold mb-4">Certificate Templates</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="border rounded-lg p-4 cursor-pointer hover:border-blue-500">
+                        <img src="/api/placeholder/150/100" alt="Template 1" class="w-full mb-2">
+                        <p class="text-sm font-medium">Classic Template</p>
+                    </div>
+                    <div class="border rounded-lg p-4 cursor-pointer hover:border-blue-500">
+                        <img src="/api/placeholder/150/100" alt="Template 2" class="w-full mb-2">
+                        <p class="text-sm font-medium">Modern Template</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+

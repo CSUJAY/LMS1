@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management - Teacher Panel</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-semibold">TeachPanel</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Dashboard</a>
+                    <a href="#" class="text-blue-600">Courses</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Students</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto py-6 px-4">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold">Course Management</h1>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                Create New Course
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Course Card -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h2 class="text-xl font-semibold">Introduction to Web Development</h2>
+                        <p class="text-gray-600">12 Modules • 36 Students Enrolled</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="text-blue-600 hover:text-blue-700">Edit</button>
+                        <button class="text-gray-600 hover:text-gray-700">Manage</button>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-medium mb-2">Course Modules</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center justify-between bg-gray-50 p-2 rounded">
+                                <span>1. HTML Basics</span>
+                                <button class="text-sm text-blue-600">Edit</button>
+                            </li>
+                            <li class="flex items-center justify-between bg-gray-50 p-2 rounded">
+                                <span>2. CSS Fundamentals</span>
+                                <button class="text-sm text-blue-600">Edit</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-medium mb-2">Upload Materials</h3>
+                        <div class="flex space-x-2">
+                            <button class="bg-gray-100 text-gray-700 px-3 py-1 rounded hover:bg-gray-200">
+                                Upload Video
+                            </button>
+                            <button class="bg-gray-100 text-gray-700 px-3 py-1 rounded hover:bg-gray-200">
+                                Add Document
+                            </button>
+                            <button class="bg-gray-100 text-gray-700 px-3 py-1 rounded hover:bg-gray-200">
+                                Add Presentation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Another Course Card -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h2 class="text-xl font-semibold">Advanced JavaScript</h2>
+                        <p class="text-gray-600">8 Modules • 24 Students Enrolled</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="text-blue-600 hover:text-blue-700">Edit</button>
+                        <button class="text-gray-600 hover:text-gray-700">Manage</button>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-medium mb-2">Course Modules</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center justify-between bg-gray-50 p-2 rounded">
+                                <span>1. ES6 Features</span>
+                                <button class="text-sm text-blue-600">Edit</button>
+                            </li>
+                            <li class="flex items-center justify-between bg-gray-50 p-2 rounded">
+                                <span>2. Async Programming</span>
+                                <button class="text-sm text-blue-600">Edit</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-medium mb-2">Upload Materials</h3>
+                        <div class="flex space-x-2">
+                            <button class="bg-gray-100 text-gray-700 px-3 py-1 rounded hover:bg-gray-200">
+                                Upload Video
+                            </button>
+                            <button class="bg-gray-100 text-gray-700 px-3 py-1 rounded hover:bg-gray-200">
+                                Add Document
+                            </button>
+                            <button class="bg-gray-100 text-gray-700 px-3 py-1 rounded hover:bg-gray-200">
+                                Add Presentation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
